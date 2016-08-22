@@ -69,6 +69,7 @@ public class UnmarshalTest {
             logger.debug("param.id", v.getId());
             logger.debug("param.name: {}", v.getName());
             logger.debug("param.style: {}", v.getStyle());
+            logger.debug("param.fixed: {}", v.getFixed());
         });
         resource.getMethodOrResource().forEach(v -> {
             if (v instanceof Resource) {
@@ -80,6 +81,7 @@ public class UnmarshalTest {
     }
 
     private void resources(final Resources resources) {
+        logger.debug("resources.base: {}", resources.getBase());
         resources.getResource().forEach(this::resource);
     }
 
